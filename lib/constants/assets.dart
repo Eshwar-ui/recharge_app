@@ -25,5 +25,6 @@ class AppAssets {
   static const String navOthers = 'assets/others.png';
   static const String navProfile = 'assets/profile icon.png';
   static const String upiIcon = 'assets/upi 1.png';
+  static const String whatsapp = 'assets/whatsapp 1.png';
   // Add more asset paths as needed
 }
