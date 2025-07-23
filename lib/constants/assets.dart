@@ -29,6 +29,8 @@ class AppAssets {
   static const String bankTransfer = 'assets/banktransfer.png';
   static const String gpay = 'assets/gpay.png';
   static const String phonepay = 'assets/phonepay.png';
+  static const String cashback = 'assets/cashback_image.png';
+  static const String recharge = 'assets/recharge_image.png';
 
   // Add more asset paths as needed
 }

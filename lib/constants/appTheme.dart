@@ -21,6 +21,8 @@ class AppTheme {
         fontWeight: FontWeight.w600,
         color: Colors.black87,
       ),
+
+      // Add these lines for chevron back button
     ),
     colorScheme: ColorScheme.fromSwatch().copyWith(
       primary: const Color(0xFF4A90E2),
@@ -31,15 +33,11 @@ class AppTheme {
         backgroundColor: const Color(0xFF4A90E2),
         foregroundColor: Colors.white,
         textStyle: const TextStyle(fontWeight: FontWeight.w600),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
     ),
   );
 
@@ -49,10 +47,11 @@ class AppTheme {
     primaryColor: const Color(0xFF1E88E5),
     scaffoldBackgroundColor: const Color(0xFF121212),
     fontFamily: GoogleFonts.poppins().fontFamily,
-    textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme).copyWith(
-      bodyLarge: const TextStyle(color: Colors.white),
-      bodyMedium: const TextStyle(color: Colors.white70),
-    ),
+    textTheme: GoogleFonts.poppinsTextTheme(ThemeData.dark().textTheme)
+        .copyWith(
+          bodyLarge: const TextStyle(color: Colors.white),
+          bodyMedium: const TextStyle(color: Colors.white70),
+        ),
     appBarTheme: AppBarTheme(
       backgroundColor: const Color(0xFF1E1E1E),
       elevation: 1,
@@ -72,15 +71,11 @@ class AppTheme {
         backgroundColor: const Color(0xFF1E88E5),
         foregroundColor: Colors.white,
         textStyle: const TextStyle(fontWeight: FontWeight.w600),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(12),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
     ),
     inputDecorationTheme: InputDecorationTheme(
-      border: OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10),
-      ),
+      border: OutlineInputBorder(borderRadius: BorderRadius.circular(10)),
     ),
   );
 }
