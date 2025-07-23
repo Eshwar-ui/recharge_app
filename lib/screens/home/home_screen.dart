@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:recharge_app/constants/assets.dart';
 import 'package:marquee/marquee.dart';
+import 'package:recharge_app/screens/services_screens/add_money_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -11,7 +12,13 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   // Method blocks for all button/icon presses
-  void _onAddMoneyPressed() {}
+  void _onAddMoneyPressed() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => const AddMoneyScreen()),
+    );
+  }
+
   void _onMyQRPressed() {}
   void _onTransactionReportPressed() {}
   void _onWalletSummaryPressed() {}
@@ -34,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
   void _onNavAccount() {}
   void _onFabPressed() {}
 
-  int _selectedNavIndex = 2;
+  int _selectedNavIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -156,15 +163,16 @@ class _HomeScreenState extends State<HomeScreen> {
                       ),
                     ),
                     SizedBox(height: 12),
-                    Divider( color: Colors.grey[300], height: 1),
+                    Divider(color: Colors.grey[300], height: 1),
                     SizedBox(height: 12),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
                         _buildRechargeShortcut(
                           imagePath: AppAssets.rechargeMobile,
-                          
-                           label: 'Mobile', onTap: _onRechargeMobilePressed,
+
+                          label: 'Mobile',
+                          onTap: _onRechargeMobilePressed,
                         ),
                         _buildRechargeShortcut(
                           imagePath: AppAssets.rechargeDTH,
@@ -191,14 +199,17 @@ class _HomeScreenState extends State<HomeScreen> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton(shape: CircleBorder(),
+      floatingActionButton: FloatingActionButton(
+        shape: CircleBorder(),
         onPressed: _onFabPressed,
-        backgroundColor: Color(0xFF8F17E6),
-        child: Icon(Icons.add, color: Colors.white, size: 32),
+        backgroundColor: Color(0xFFDEBEFF),
+        child: Icon(Icons.add, color: Colors.black, size: 32),
         elevation: 4,
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: BottomAppBar(height: 69,
+      bottomNavigationBar: BottomAppBar(
+        height: 69,
+        color: Color(0xffEEEEEE),
         shape: CircularNotchedRectangle(),
         notchMargin: 8,
         child: Container(
@@ -206,10 +217,12 @@ class _HomeScreenState extends State<HomeScreen> {
           padding: EdgeInsets.symmetric(horizontal: 8),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               _buildNavItem(AppAssets.logo, 'Samypay', 0, _onNavSamypay),
               _buildNavItem(AppAssets.navReport, 'Report', 1, _onNavReport),
-              SizedBox(width: 48), // space for FAB
+              // SizedBox(width: 48), // space for FAB
+              Text('All Services'),
               _buildNavItem(AppAssets.navOthers, 'Others', 3, _onNavOthers),
               _buildNavItem(AppAssets.navProfile, 'Account', 4, _onNavAccount),
             ],
@@ -221,58 +234,59 @@ class _HomeScreenState extends State<HomeScreen> {
 
   SizedBox bannerSection(BuildContext context) {
     return SizedBox(
-              height: 150,
-              child: SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Padding(padding: EdgeInsets.symmetric(horizontal: 16),
-                  child: Row(
-                    children: [
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.6,
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(12),
-                          image: DecorationImage(
-                            image: AssetImage(
-                              'assets/banners/Tata-Sky-Recharge-Plans-1.jpg 1.png',
-                            ),
-                            fit: BoxFit.cover,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
-                              blurRadius: 8,
-                              offset: Offset(0, 2),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Container(
-                        width: MediaQuery.of(context).size.width * 0.85,
-                        margin: EdgeInsets.symmetric(horizontal: 8),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(12),
-                          image: DecorationImage(
-                            image: AssetImage(
-                              'assets/banners/sun-direct-new-connections-offer 1.png',
-                            ),
-                            fit: BoxFit.cover,
-                          ),
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.05),
-                              blurRadius: 8,
-                              offset: Offset(0, 2),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+      height: 150,
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 16),
+          child: Row(
+            children: [
+              Container(
+                width: MediaQuery.of(context).size.width * 0.6,
+                margin: EdgeInsets.symmetric(horizontal: 8),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/banners/Tata-Sky-Recharge-Plans-1.jpg 1.png',
+                    ),
+                    fit: BoxFit.cover,
                   ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.05),
+                      blurRadius: 8,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
                 ),
               ),
-            );
+              Container(
+                width: MediaQuery.of(context).size.width * 0.85,
+                margin: EdgeInsets.symmetric(horizontal: 8),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  image: DecorationImage(
+                    image: AssetImage(
+                      'assets/banners/sun-direct-new-connections-offer 1.png',
+                    ),
+                    fit: BoxFit.cover,
+                  ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withOpacity(0.05),
+                      blurRadius: 8,
+                      offset: Offset(0, 2),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
   }
 
   Container marquee() {
@@ -569,9 +583,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  
-    Widget _buildRechargeShortcut({
-    
+  Widget _buildRechargeShortcut({
     required String imagePath,
     required String label,
     required VoidCallback onTap,
@@ -594,27 +606,26 @@ class _HomeScreenState extends State<HomeScreen> {
                 ),
               ],
             ),
-            child: 
-                 Container(padding: EdgeInsets.all(8),
-                  decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.black.withOpacity(0.05),
-                        blurRadius: 8,
-                        offset: Offset(0, 2),
-                      ),
-                    ],
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    ),
-                   child: Image.asset(
-                      imagePath,
-                      width: 28,
-                      height: 28,
-                      // color: Color(0xFF8F17E6),
-                    ),
-                 )
-                
+            child: Container(
+              padding: EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.05),
+                    blurRadius: 8,
+                    offset: Offset(0, 2),
+                  ),
+                ],
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: Image.asset(
+                imagePath,
+                width: 28,
+                height: 28,
+                // color: Color(0xFF8F17E6),
+              ),
+            ),
           ),
           SizedBox(height: 6),
           Text(label, style: TextStyle(fontSize: 12, color: Colors.black87)),
