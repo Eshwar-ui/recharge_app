@@ -13,8 +13,10 @@ class AppAssets {
   static const String aeps2 = 'assets/AEPS.png';
   static const String walletBalance = 'assets/icons/wallet_balance.png';
   static const String outstandingWallet = 'assets/icons/outstanding_wallet.png';
-  static const String promoBanner1 = 'assets/banners/promo1.png';
-  static const String promoBanner2 = 'assets/banners/promo2.png';
+  static const String promoBanner1 =
+      'assets/banners/sun-direct-new-connections-offer 1.png';
+  static const String promoBanner2 =
+      'assets/banners/Tata-Sky-Recharge-Plans-1.jpg 1.png';
   static const String rechargeMobile = 'assets/mobile 1.png';
   static const String rechargeDTH = 'assets/DTH.png';
   static const String rechargePlaystore = 'assets/playstore.png';
@@ -31,6 +33,17 @@ class AppAssets {
   static const String phonepay = 'assets/phonepay.png';
   static const String cashback = 'assets/cashback_image.png';
   static const String recharge = 'assets/recharge_image.png';
+  static const String add_money = 'assets/Open_account.png';
+  static const String depositIcon = 'assets/Deposit.png';
+  static const String airtel = 'assets/airtel.png';
+  static const String jio = 'assets/jio.png';
+  static const String vodafoneIdea = 'assets/vodafone idea.png';
+  static const String bsnl = 'assets/bsnl.png';
+  static const String prepaidIcon = 'assets/prepaid.png';
+  static const String postpaidIcon = 'assets/postpaid.png';
+  static const String dthIcon = 'assets/dthIcon.png';
+  static const String markIcon = 'assets/markIcon.png';
+  static const String contact = 'assets/contactbook.png';
 
   // Add more asset paths as needed
 }

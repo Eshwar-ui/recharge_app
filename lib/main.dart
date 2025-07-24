@@ -7,6 +7,7 @@ import 'package:recharge_app/screens/auth/verify_mobile_screen.dart';
 import 'package:recharge_app/screens/home/home_screen.dart';
 import 'package:recharge_app/screens/services_screens/add_bank_screen.dart';
 import 'package:recharge_app/screens/services_screens/add_funds_screen.dart';
+import 'package:recharge_app/screens/services_screens/recharge_screen.dart';
 import 'package:recharge_app/screens/services_screens/transactions_report_screen.dart';
 import 'package:recharge_app/screens/services_screens/wallet_summary_screen.dart';
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Recharge app',
-      home: WalletSummaryScreen(),
+      home: RechargeScreen(),
       theme: AppTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       routes: {'/verify-mobile': (context) => const VerifyMobileScreen()},
